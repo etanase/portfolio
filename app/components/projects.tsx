@@ -24,22 +24,22 @@ type Project = {
 
 const projects: Project[] = [
   {
-    title: "PointOrchard",
+    title: "Sophros",
     description:
-      "A credit card bonus tracking site that hit 2,000+ visitors in under a month.",
-    link: "https://www.pointorchard.com",
+      "Purdue ECE Senior Design project (Software Track): A React Native app for healthy and easy meal planning.",
+    github: "https://github.com/emersonmaddock/sophros",
   },
   {
-    title: "ECELabs",
-    description:
-      "Digital design and SystemVerilog educational platform for Purdue ECE students (Only accessible to Purdue ECE students).",
-    link: "https://alpha.ecelabs.io",
+    title: "Wave LFP Lever Decoding",
+    description: "Machine learning models and workflows for decoding mouse lever press behavior from LFP signals.",
+    github: "https://github.com/etanase/wave-lfp-lever-decoding",
   },
   {
-    title: "Graphisophy",
+    title: "Deaf-i",
     description:
-      "(WIP) Fountain pen and ink wiki, collection platform, and community for pen enthusiasts.",
-    link: "https://www.graphisophy.com",
+      "Deaf-i is a nonprofit for cochlear implant awareness and education.",
+    link: "https://www.deaf-i.org",
+    github: "https://github.com/etanase/deaf-i",
   },
   {
     title: "Meepo Skateboard ARGB",
@@ -48,11 +48,16 @@ const projects: Project[] = [
     github: "https://github.com/etanase/board-lights",
   },
   {
-    title: "Deaf-i",
+    title: "ECELabs",
     description:
-      "Deaf-i is a nonprofit for cochlear implant awareness and education.",
-    link: "https://www.deaf-i.org",
-    github: "https://github.com/etanase/deaf-i",
+      "Digital design and SystemVerilog educational platform for Purdue ECE students (Only accessible to Purdue ECE students).",
+    link: "https://alpha.ecelabs.io",
+  },
+  {
+    title: "PointOrchard",
+    description:
+      "A credit card bonus tracking site that hit 2,000+ visitors in under a month.",
+    link: "https://www.pointorchard.com",
   },
   {
     title: "România Unită",
