@@ -8,9 +8,13 @@ export default function Page() {
         Eduard Tanase
       </h1>
       <p className="mb-4">
-        {`I'm Eduard Tanase, an incoming graduate student at Stanford University studying Computer Science and a Purdue Computer Engineering alumnus. My projects bounce between full-stack development, computational neuroscience, and embedded systems.
-        I build websites like Deaf-i, a nonprofit website for the hearing-impaired community, and ECELabs, a digital design platform used by every Computer Engineering student at Purdue.
-        In my research, I develop machine learning models to interpret brain signals. I enjoy working on challenging projects and learning new things, as well as pursuing hobbies like guitar, cooking, and gaming.`}
+        {`I'm Eduard Tanase, a master's student in computer science at Stanford University and a computer engineering graduate of Purdue University. I've interned at Roblox and Leidos, and I'm the CTO of Deaf-i, a nonprofit supporting cochlear implant recipients.`}
+      </p>
+      <p className="mb-4">
+        {`At Purdue, my research focused on computational neuroscience and using machine learning to decode movement from multimodal neural recordings in mice. I also led full-stack development of ECELabs, a digital design platform used by over 270 Purdue students per semester, with drag-and-drop module design, Verilog compilation, and remote FPGA access. With Purdue's SoCET team, I worked on low-level software for a custom RISC-V microcontroller.`}
+      </p>
+      <p className="mb-4">
+        {`I enjoy working on challenging projects and learning new things, as well as pursuing hobbies like guitar, cooking, and gaming.`}
       </p>
       <Links />
     </section>
