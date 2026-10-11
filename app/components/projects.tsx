@@ -20,6 +20,7 @@ type Project = {
   description: string;
   link?: string;
   github?: string;
+  demo?: string;
 };
 
 const projects: Project[] = [
@@ -52,6 +53,7 @@ const projects: Project[] = [
     description:
       "Digital design and SystemVerilog educational platform for Purdue ECE students (Only accessible to Purdue ECE students).",
     link: "https://alpha.ecelabs.io",
+    demo: "https://www.youtube.com/watch?v=3n0xlGp5wHM",
   },
   {
     title: "PointOrchard",
@@ -120,6 +122,19 @@ export function Projects() {
                 >
                   <ArrowIcon />
                   <p className="ml-2 h-7">github</p>
+                </a>
+              </li>
+            )}
+            {project.demo && (
+              <li key={project.demo}>
+                <a
+                  className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  href={project.demo}
+                >
+                  <ArrowIcon />
+                  <p className="ml-2 h-7">Watch demo</p>
                 </a>
               </li>
             )}
