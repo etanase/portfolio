@@ -14,7 +14,7 @@ export default function Page() {
         {`At Purdue, my research focused on computational neuroscience and using machine learning to decode movement from multimodal neural recordings in mice. I also led full-stack development of ECELabs, a digital design platform used by over 270 Purdue students per semester, with drag-and-drop module design, Verilog compilation, and remote FPGA access. With Purdue's SoCET team, I worked on low-level software for a custom RISC-V microcontroller.`}
       </p>
       <p className="mb-4">
-        {`I enjoy working on challenging projects and learning new things, as well as pursuing hobbies like guitar, cooking, and gaming.`}
+        {`In my free time, I cook, play acoustic and electric guitar, and work out.`}
       </p>
       <Links />
     </section>
