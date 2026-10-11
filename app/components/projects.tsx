@@ -96,12 +96,6 @@ const projects: Project[] = [
   },
 ];
 
-const monthYearFormatter = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  year: "numeric",
-  timeZone: "UTC",
-});
-
 export function Projects() {
   return (
     <div className="flex flex-col gap-4">
@@ -109,19 +103,15 @@ export function Projects() {
         <div className="flex flex-col">
           <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
             {project.title}
+            {project.lastWorkedOn && (
+              <>
+                {" "}
+                <span className="whitespace-nowrap text-neutral-600 dark:text-neutral-400">
+                  · <time dateTime={project.lastWorkedOn}>{project.lastWorkedOn.slice(0, 4)}</time>
+                </span>
+              </>
+            )}
           </p>
-          {project.lastWorkedOn && (
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
-              Last worked on ·{" "}
-              <time dateTime={project.lastWorkedOn}>
-                {project.lastWorkedOn.length === 4
-                  ? project.lastWorkedOn
-                  : monthYearFormatter.format(
-                      new Date(`${project.lastWorkedOn}-01T00:00:00Z`)
-                    )}
-              </time>
-            </p>
-          )}
           <p className="text-neutral-600 dark:text-neutral-400">
             {project.description}
           </p>
