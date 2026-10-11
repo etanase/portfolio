@@ -21,6 +21,7 @@ type Project = {
   link?: string;
   github?: string;
   demo?: string;
+  recognition?: string;
 };
 
 const projects: Project[] = [
@@ -34,6 +35,7 @@ const projects: Project[] = [
     title: "Wave LFP Lever Decoding",
     description: "Machine learning models and workflows for decoding mouse lever press behavior from LFP signals.",
     github: "https://github.com/etanase/wave-lfp-lever-decoding",
+    recognition: "3rd place, Best Undergraduate Poster Presentation",
   },
   {
     title: "Deaf-i",
@@ -139,6 +141,11 @@ export function Projects() {
               </li>
             )}
           </ul>
+          {project.recognition && (
+            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+              {project.recognition}
+            </p>
+          )}
         </div>
       ))}
     </div>
