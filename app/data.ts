@@ -219,7 +219,10 @@ export const projects: Project[] = [
     summary: 'Design circuits and flash real FPGAs from the browser.',
     description:
       'A digital design lab in the browser: draw circuits or write SystemVerilog, compile, and flash one of 30+ real FPGA boards remotely. Used by 270+ Purdue students each semester.',
-    links: [{ label: 'Site (Purdue login)', href: 'https://alpha.ecelabs.io' }],
+    links: [
+      { label: 'Demo', href: 'https://www.youtube.com/watch?v=3n0xlGp5wHM' },
+      { label: 'Site (Purdue login)', href: 'https://alpha.ecelabs.io' },
+    ],
     images: [
       {
         src: '/images/projects/ecelabs.jpg',
@@ -237,7 +240,7 @@ export const projects: Project[] = [
     stack: 'Next.js, Prismic, Stripe',
     summary: 'Website for a cochlear implant nonprofit.',
     description:
-      'Website for a nonprofit that supports families of cochlear implant recipients, with a blog, donations, and a newsletter.',
+      "I'm the CTO of Deaf-i, a nonprofit supporting cochlear implant recipients and their families. I built its website, with a blog, donations, and a newsletter.",
     links: [{ label: 'Site', href: 'https://www.deaf-i.org' }],
     images: [
       {
