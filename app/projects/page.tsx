@@ -1,15 +1,17 @@
-import { Projects } from 'app/components/projects';
+import type { Metadata } from 'next'
+import { ProjectList } from 'app/components/project-list'
+import { projects } from 'app/data'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Projects',
-  description: 'View my projects.',
-};
+  description: 'Things Eduard Tanase has built.',
+}
 
 export default function Page() {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">My Projects</h1>
-      <Projects />
+      <h1 className="mb-10 text-2xl font-semibold tracking-tight">Projects</h1>
+      <ProjectList projects={projects} />
     </section>
-  );
+  )
 }

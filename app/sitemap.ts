@@ -1,10 +1,24 @@
-export const baseUrl = 'https://portfolio-blog-starter.vercel.app'
+import { baseUrl, projects } from './data'
+import { getPosts } from './blog/utils'
 
-export default async function sitemap() {
-  let routes = ['', '/projects'].map((route) => ({
+export default function sitemap() {
+  const today = new Date().toISOString().split('T')[0]
+  const posts = getPosts()
+
+  const routes = ['', '/projects', ...(posts.length ? ['/blog'] : [])].map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date().toISOString().split('T')[0],
+    lastModified: today,
   }))
 
-  return routes
+  const blogs = posts.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: post.meta.date,
+  }))
+
+  const projectPages = projects.map((p) => ({
+    url: `${baseUrl}/projects/${p.slug}`,
+    lastModified: today,
+  }))
+
+  return [...routes, ...projectPages, ...blogs]
 }

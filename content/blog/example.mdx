@@ -1,0 +1,34 @@
+---
+title: Example post
+date: 2026-11-16
+summary: A template showing how posts and images work. Only visible in development.
+draft: true
+---
+
+This post is a draft, so it only shows up when running `pnpm dev`. Copy this file,
+rename it (the filename becomes the URL), and remove `draft: true` to publish.
+
+## Images
+
+Put images in `public/images/blog/` and reference them with markdown. The text in
+quotes becomes a caption.
+
+![PCB layout for the skateboard lights](/images/projects/board-pcb.jpg "The skateboard lighting board in KiCad.")
+
+## Side-by-side images
+
+Wrap several images in `<Figures>` to place them in a row:
+
+<Figures caption="Two screens from Sophros.">
+![Week planning screen](/images/projects/sophros-plan.jpg)
+![Progress screen](/images/projects/sophros-streak.jpg)
+</Figures>
+
+## Code
+
+```python
+def decode(lfp):
+    return model(lfp)
+```
+
+Inline `code`, **bold**, [links](https://github.com/etanase), lists, and quotes all work too.

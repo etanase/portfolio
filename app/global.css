@@ -1,8 +1,12 @@
 @import 'tailwindcss';
 
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
 ::selection {
-  background-color: #47a3f3;
-  color: #fefefe;
+  @apply bg-neutral-200 dark:bg-neutral-700;
 }
 
 :root {
@@ -33,118 +37,100 @@ html {
   min-width: 360px;
 }
 
-.prose .anchor {
-  @apply absolute invisible no-underline;
-
-  margin-left: -1em;
-  padding-right: 0.5em;
-  width: 80%;
-  max-width: 700px;
-  cursor: pointer;
-}
-
-.anchor:hover {
-  @apply visible;
-}
-
-.prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
-}
-
-.prose .anchor:after {
-  @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
-}
-
-.prose *:hover > .anchor {
-  @apply visible;
-}
-
-.prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-900 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
-}
-
-.prose code {
-  @apply px-1 py-0.5 rounded-lg;
-}
-
-.prose pre code {
-  @apply p-0;
-  border: initial;
-  line-height: 1.5;
-}
-
-.prose code span {
-  @apply font-medium;
-}
-
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply m-0;
-}
-
-.prose p {
-  @apply my-4 text-neutral-800 dark:text-neutral-200;
-}
-
-.prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
-}
-
-.prose strong {
-  @apply font-medium;
-}
-
-.prose ul {
-  @apply list-disc pl-6;
-}
-
-.prose ol {
-  @apply list-decimal pl-6;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
-}
-
-pre::-webkit-scrollbar {
-  display: none;
-}
-
-pre {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-
-/* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-table {
-  display: block;
-  max-width: fit-content;
-  overflow-x: auto;
-  white-space: nowrap;
+/* Quiet underlined links used throughout the site. Declared with @utility
+   (not a plain class) so `.prose a` below can @apply it. */
+@utility link {
+  @apply underline decoration-neutral-300 underline-offset-4 transition-colors hover:decoration-neutral-600 dark:decoration-neutral-700 dark:hover:decoration-neutral-400;
 }
 
 .title {
   text-wrap: balance;
+}
+
+/* Blog post body */
+.prose {
+  @apply mt-8;
+}
+
+.prose p,
+.prose ul,
+.prose ol,
+.prose blockquote {
+  @apply my-5;
+}
+
+.prose a {
+  @apply link;
+}
+
+.prose h2 {
+  @apply mt-10 mb-3 text-lg font-medium text-neutral-900 dark:text-neutral-100;
+}
+
+.prose h3 {
+  @apply mt-8 mb-2 font-medium text-neutral-900 dark:text-neutral-100;
+}
+
+.prose strong {
+  @apply font-medium text-neutral-900 dark:text-neutral-100;
+}
+
+.prose ul {
+  @apply list-disc pl-5;
+}
+
+.prose ol {
+  @apply list-decimal pl-5;
+}
+
+.prose li {
+  @apply my-1;
+}
+
+.prose blockquote {
+  @apply border-l-2 border-neutral-300 pl-4 text-neutral-600 dark:border-neutral-700 dark:text-neutral-400;
+}
+
+.prose hr {
+  @apply my-10 border-neutral-200 dark:border-neutral-800;
+}
+
+.prose .image,
+.prose figure {
+  @apply my-8 block;
+}
+
+.prose img {
+  @apply w-full rounded-md border border-neutral-200 dark:border-neutral-800;
+}
+
+.prose .caption {
+  @apply mt-2 block text-center text-sm text-neutral-500;
+}
+
+/* <Figures>: images side by side in equal-width columns. MDX wraps the
+   images in a <p>, so that <p> is the actual flex row. */
+.prose .figures p {
+  @apply my-0 flex items-start gap-2;
+}
+
+.prose .figures .image {
+  @apply my-0 min-w-0 flex-1;
+}
+
+.prose pre {
+  @apply overflow-x-auto rounded-md border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm dark:border-neutral-800 dark:bg-neutral-900;
+  scrollbar-width: none;
+}
+
+.prose code {
+  @apply font-mono text-[0.9em];
+}
+
+.prose :not(pre) > code {
+  @apply rounded bg-neutral-100 px-1 py-0.5 dark:bg-neutral-800;
+}
+
+.prose table {
+  @apply block max-w-fit overflow-x-auto whitespace-nowrap;
 }
