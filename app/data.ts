@@ -55,7 +55,7 @@ export const experience: Entry[] = [
   },
   {
     org: 'Leidos',
-    role: 'Embedded Design Intern',
+    role: 'Firmware Engineer Intern',
     dates: 'Summer 2025',
     logo: '/images/logos/leidos.png',
   },
